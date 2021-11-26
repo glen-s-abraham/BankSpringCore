@@ -4,6 +4,7 @@ public class Bank {
 	
 	private Transaction transaction;
 	private AccountRepositoryInterface accRepo;
+	
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
 	}
