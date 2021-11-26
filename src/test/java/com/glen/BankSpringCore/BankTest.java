@@ -22,5 +22,41 @@ class BankTest {
 				"Account created Successfully with accNo " + 123L);
 	}
 	
+	@Test
+	void shouldAddMoneyIfGivenRightDetails() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.addMoney(123L, 100L), "Money Added");
+	}
+	
+	@Test
+	void shouldNotAddMoneyIfGivenWrongAccountRightAmount() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.addMoney(124L, 100L), "invalid accNo");
+	}
+	
+	@Test
+	void shouldNotAddMoneyIfGivenRightAccountWrongAmount() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.addMoney(123L, -100L), "Money Not Added");
+	}
+	
+	@Test
+	void shouldWithdrawMoneyIfGivenRightDetails() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.drawMoney(123L, 100L), "Money Withdrawn");
+	}
+	
+	@Test
+	void shouldNotWithdrawMoneyIfGivenWrongAccountRightAmount() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.drawMoney(124L, 100L), "invalid accNo");
+	}
+	
+	@Test
+	void shouldNotWithdrawMoneyIfGivenRightAccountWrongAmount() {
+		bank.createAccount(123L, "Test", 1500L);
+		assertEquals(bank.drawMoney(123L, 1501L), "Money Not Withdrawn");
+	}
+	
 
 }
