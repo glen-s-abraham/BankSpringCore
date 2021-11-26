@@ -4,7 +4,10 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-	
+    <bean id="accountRepository" class="com.glen.BankSpringCore.AccountRepository">
+    </bean>
+	<bean id="transaction" class="com.glen.BankSpringCore.Transaction">
+	</bean>
+	<bean id="bank" class="com.glen.BankSpringCore.Bank"></bean>
 
 </beans>
