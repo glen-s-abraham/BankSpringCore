@@ -14,7 +14,7 @@ public class App
     {
         ApplicationContext factory=new ClassPathXmlApplicationContext("dependencies.xml");
         Bank bank = (Bank) factory.getBean("bank");
-        System.out.println("Welcome to Bank");
+        System.out.println(bank.createAccount(123L, "Name", 5000L));
         
     }
 }
